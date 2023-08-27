@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-let baseUrl = 'http://localhost:5000'
+let baseUrl = 'https://ecommerce-hn4v.onrender.com'
 
 export const registerUser = async (data) =>{
-    console.log('resigter user data', data)
+
     const options = {
         url: baseUrl + '/register',
         method: 'POST',
@@ -17,7 +17,7 @@ export const registerUser = async (data) =>{
 }
 
 export const login = async (data) =>{
-    console.log('resigter user data', data)
+    
     const options = {
         url: baseUrl + '/login',
         method: 'POST',

@@ -42,7 +42,6 @@ const placeOrder = asyncHandler( async(req, res) => {
             {new: true}
         )
     })
-    console.log(output)
     res.status(200).json(output)
 })
 

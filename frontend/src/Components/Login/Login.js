@@ -33,6 +33,9 @@ function Login(props) {
   }
 
   const openSignUpForm = () => {
+    setEmail('')
+    setUsername('')
+    setPassword('')
     setOpenLoginForm(!openLoginForm)
   }
     

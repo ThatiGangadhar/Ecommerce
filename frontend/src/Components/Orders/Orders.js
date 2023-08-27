@@ -34,7 +34,7 @@ export default function Orders() {
         <div style={{display: 'flex' , gap: '50px'}}>
         {orders.length > 0 && orders.map(each => {
             return(
-                <div onClick={() => handleOpenProduct(each.id)} key={each.uniqueId} style={{display: 'flex', gap: '30px', cursor: 'pointer', borderRadius: '10px', width: '300px', boxShadow: '0px 10px 15px 3px black'}}>
+                <div onClick={() => handleOpenProduct(each.id)} key={each.uniqueId} style={{display: 'flex', gap: '30px', cursor: 'pointer', borderRadius: '10px', width: '300px', height: '110px', boxShadow: '0px 10px 15px 3px black'}}>
                     <img style={{height: '100%', width: '110px', borderRadius: '10px'}} src={each.images[0]} alt={each.title}/>
                     <div style={{borderRadius: '10px', marginRight: '10px'}}>
                         <h3 style={{ margin: '0px'}}>{each.title}</h3>

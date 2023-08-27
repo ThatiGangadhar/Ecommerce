@@ -22,30 +22,24 @@ const productsSclice = createSlice({
     },
     reducers: {
         getProducts: (state, action) => {
-            console.log('action', action)
             state.products = action.payload
         },
         getProduct: (state, action) => {
-            console.log('getProduct', action)
             state.currProduct = action.payload
         },
         cartProducts: (state, action) => {
-            console.log('cartProducts', action.payload)
             state.cartProducts.push(action.payload)
         },
         removeProduct: (state, action) => {
-            console.log('Remove Products', action.payload)
             state.cartProducts = state.cartProducts.filter(each => each.uniqueId !== action.payload)
         },
         makeCartEmpty: (state, action) => {
-            console.log('Make cart empty')
             state.cartProducts = []
         }
     },
     extraReducers(builder) {
         builder.addCase(fetchCartProducts.fulfilled, (state, action) => {
             state.cartStatus = 'completed'
-            console.log('payload',state.cartProducts, action.payload)
             state.cartProducts = action.payload
         })
         .addCase(fetchCartProducts.pending, (state, action) => {

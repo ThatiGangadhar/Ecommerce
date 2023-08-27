@@ -15,8 +15,7 @@ export default function ProductCard() {
     const product = useSelector((state) => state.products.currProduct)
     const [currentImg, setCurrentImg] = useState('')
     const {id} = useParams()
-    const {title, brand, category, description, images, price, rating} = product
-    console.log('loading', title, brand, price)
+    const {title, brand, description, images, price, rating} = product
     
     useEffect(() => {
         const fetchProduct = async () => {
@@ -26,7 +25,6 @@ export default function ProductCard() {
                     url: `https://dummyjson.com/products/${id}`
                 }
                 const response = await axios(options)
-                console.log('response', response)
                 dispatch(getProduct(response.data))
                 setCurrentImg(response.data.images[0])
                 setLoading(false)
@@ -52,7 +50,6 @@ export default function ProductCard() {
     }
 
     const handleImageChange = (event) => {
-        console.log(event.target.src)
         setCurrentImg(event.target.src)
     }
     

@@ -1,10 +1,9 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-let baseUrl = 'http://localhost:5000'
+let baseUrl = 'https://ecommerce-hn4v.onrender.com'
 
 export const getCartProducts = async () =>{
-    console.log('Get Product From Cart')
     const options = {
         url: baseUrl + '/getProducts',
         method: 'GET',
@@ -18,7 +17,6 @@ export const getCartProducts = async () =>{
 }
 
 export const addProduct = async (data) =>{
-    console.log('Add Product', data)
     const options = {
         url: baseUrl + '/addProduct',
         method: 'POST',
@@ -33,7 +31,6 @@ export const addProduct = async (data) =>{
 }
 
 export const removeProductFromCart = async (data) =>{
-    console.log('remove Product From Cart', data)
     const options = {
         url: baseUrl + '/removeProduct',
         method: 'POST',
@@ -48,7 +45,6 @@ export const removeProductFromCart = async (data) =>{
 }
 
 export const placeOrder = async () =>{
-    console.log('Order Place')
     const options = {
         url: baseUrl + '/placeOrder',
         method: 'GET',
@@ -62,7 +58,6 @@ export const placeOrder = async () =>{
 }
 
 export const fetchOrders = async () =>{
-    console.log('Fetch Orders')
     const options = {
         url: baseUrl + '/getOrders',
         method: 'GET',

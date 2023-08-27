@@ -27,7 +27,6 @@ export default function Home() {
             const response = await axios(options)
             dispatch(getProducts(response.data.products))
             setProducts(response.data.products)
-            console.log('response: ', response)
 
         } catch (error) {
             console.log(`Error in Fetching Products ${error}`)

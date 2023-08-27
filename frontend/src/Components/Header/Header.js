@@ -13,11 +13,11 @@ export default function Header() {
   }
 
   const handleLogout = () => {
-    console.log('logout triger')
     localStorage.removeItem('username')
     localStorage.removeItem('token')
     Cookies.remove('token')
     navigate('/login')
+    window.location.reload()
   }
 
   return (

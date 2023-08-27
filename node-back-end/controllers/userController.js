@@ -4,8 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const userRegister = asyncHandler(async (req, res) => {
-    console.log(' Register called')
-    console.log('request body', req.body)
+    console.log(' Register called', req.body)
     const {name, password, email} = req.body
     if (!name || !password || !email){
         res.status(400)
@@ -18,7 +17,6 @@ const userRegister = asyncHandler(async (req, res) => {
     }
     const hashedPwd = await bcrypt.hash(password, 10)
     const response = await ecmrsUser.create({name, email, password: hashedPwd})
-    console.log('response', response, hashedPwd)
     res.status(201).json(response)
 })
 

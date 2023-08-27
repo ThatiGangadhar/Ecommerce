@@ -10,7 +10,6 @@ export default function Cart() {
   const [openModal, setOpenModal] = useState(false)
   const products = useSelector(state => state.products.cartProducts)
   const cartStatus = useSelector(state => state.products.cartStatus)
-  console.log('Cart products',cartStatus, products)
   const navigate = useNavigate()
 
   
@@ -52,7 +51,6 @@ export default function Cart() {
     {cartStatus==='loading' && <div style={{display: 'flex',alignItems: 'center', justifyContent: 'center',width: '100%', height: '90vh'}}>loading....</div>}
     <div style={{padding: '20px', display: 'flex',  flexWrap: 'wrap', gap: '30px'}}>
       {products.length > 0 && products.map((each) => {
-        console.log('each',each)
         const {title, images, price, rating} = each
           return (
             <div key={each.uniqueId} style={{boxShadow: '10px 10px 10px 10px grey', borderRadius: '10px',height: '350px',width: '270px',}}>
